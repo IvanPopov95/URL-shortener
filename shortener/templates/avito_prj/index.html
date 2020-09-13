@@ -1,0 +1,17 @@
+<!DOCTYPE html> 
+<html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <title>Short Your URL</title> 
+</head> 
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Get Shortened URL">
+        {% if short_url  %}
+        <h4> Your short URL : {{ short_url }}</h4>
+        {% endif %}
+    </form> 
+</body> 
+</html>
